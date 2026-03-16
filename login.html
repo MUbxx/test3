@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,113 +15,77 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins;
 }
 
 body{
-
 background:#071521;
 color:white;
-min-height:100vh;
+height:100vh;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-
+flex-direction:column;
 }
 
 /* header */
 
 .header{
-
 position:absolute;
 top:20px;
 left:20px;
 font-size:22px;
 font-weight:700;
-
 }
 
 .header span:first-child{
-
 color:#00c7d9;
-
 }
 
 .header span:last-child{
-
 color:white;
-
 }
 
-/* container */
+/* card */
 
-.container{
+.card{
 
-width:95%;
+width:92%;
 max-width:420px;
 
 background:#0e2234;
 
-border-radius:18px;
-
 padding:35px;
 
-box-shadow:0 0 25px rgba(0,0,0,.4);
+border-radius:18px;
+
+box-shadow:0 0 30px rgba(0,0,0,.4);
 
 }
 
-/* title */
-
-.title{
-
-text-align:center;
-
-margin-bottom:20px;
-
-}
-
-.title h1{
-
+h1{
 color:#00c7d9;
-
-margin-bottom:5px;
-
+text-align:center;
 }
 
-.title p{
-
-color:#9ca3af;
-
+.subtitle{
+text-align:center;
 font-size:14px;
-
+color:#9ca3af;
+margin-bottom:20px;
 }
-
-/* label */
 
 label{
-
-display:block;
-
-margin-top:15px;
-
 font-size:12px;
-
-letter-spacing:1px;
-
 color:#00c7d9;
-
 }
-
-/* input */
 
 input{
 
 width:100%;
-
 padding:12px;
 
-margin-top:6px;
+margin:6px 0 12px;
 
 border-radius:10px;
 
@@ -130,57 +95,26 @@ background:#0c1a27;
 
 color:white;
 
-font-size:14px;
-
 }
-
-input::placeholder{
-
-color:#6b7280;
-
-}
-
-/* forgot */
-
-.forgot{
-
-text-align:right;
-
-margin-top:5px;
-
-font-size:12px;
-
-color:#00c7d9;
-
-cursor:pointer;
-
-}
-
-/* button */
 
 .login-btn{
 
-margin-top:20px;
-
 width:100%;
-
 padding:13px;
+
+background:linear-gradient(90deg,#00c7d9,#1ba3d6);
 
 border:none;
 
 border-radius:10px;
 
-background:linear-gradient(90deg,#00c7d9,#1ba3d6);
-
-font-size:16px;
-
 font-weight:600;
 
 cursor:pointer;
 
-}
+margin-top:10px;
 
-/* divider */
+}
 
 .divider{
 
@@ -210,17 +144,12 @@ background:#1e3a4f;
 }
 
 .divider span{
-
 margin:0 10px;
-
 }
-
-/* google */
 
 .google-btn{
 
 width:100%;
-
 padding:12px;
 
 border-radius:10px;
@@ -230,8 +159,6 @@ border:1px solid #1e3a4f;
 background:#0c1a27;
 
 color:white;
-
-font-size:15px;
 
 cursor:pointer;
 
@@ -245,31 +172,28 @@ gap:10px;
 
 }
 
-/* register */
-
 .register{
-
-margin-top:15px;
-
 text-align:center;
-
+margin-top:15px;
 font-size:14px;
-
 color:#9ca3af;
-
 }
 
 .register a{
-
 color:#00c7d9;
-
-font-weight:600;
-
 text-decoration:none;
+}
 
+.forgot{
+text-align:right;
+font-size:12px;
+color:#00c7d9;
+cursor:pointer;
+margin-bottom:10px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -280,43 +204,31 @@ text-decoration:none;
 
 </div>
 
-<div class="container">
-
-<div class="title">
+<div class="card">
 
 <h1>Welcome Back</h1>
 
-<p>Sign in to your Cyber Buddy account</p>
-
-</div>
+<p class="subtitle">Sign in to your Cyber Buddy account</p>
 
 <label>Email Address</label>
-
-<input type="email" placeholder="you@email.com">
+<input id="email" type="email" placeholder="you@email.com">
 
 <label>Password</label>
+<input id="password" type="password" placeholder="••••••••">
 
-<input type="password" placeholder="••••••••">
-
-<div class="forgot">
-
+<div class="forgot" id="forgotBtn">
 Forgot password?
-
 </div>
 
-<button class="login-btn">
-
+<button class="login-btn" id="loginBtn">
 Sign In
-
 </button>
 
 <div class="divider">
-
 <span>OR</span>
-
 </div>
 
-<button class="google-btn">
+<button class="google-btn" id="googleBtn">
 
 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18">
 
@@ -328,15 +240,117 @@ Continue with Google
 
 No account?
 
-<a href="register.html">
-
-Register free
-
-</a>
+<a href="register.html">Register free</a>
 
 </div>
 
 </div>
+
+<!-- Firebase -->
+
+<script type="module">
+
+import { auth, db } from "./js/firebase.js";
+
+import {
+signInWithEmailAndPassword,
+GoogleAuthProvider,
+signInWithPopup,
+sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+import {
+doc,
+getDoc,
+setDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+async function ensureUser(user){
+
+const ref=doc(db,"users",user.uid);
+
+const snap=await getDoc(ref);
+
+if(!snap.exists()){
+
+await setDoc(ref,{
+name:user.displayName || "Student",
+email:user.email,
+role:"user",
+createdAt:serverTimestamp()
+});
+
+}
+
+}
+
+document.getElementById("loginBtn").onclick=async()=>{
+
+const email=document.getElementById("email").value;
+
+const password=document.getElementById("password").value;
+
+try{
+
+const res=await signInWithEmailAndPassword(auth,email,password);
+
+await ensureUser(res.user);
+
+window.location="dashboard.html";
+
+}catch(e){
+
+alert(e.message);
+
+}
+
+};
+
+document.getElementById("googleBtn").onclick=async()=>{
+
+try{
+
+const provider=new GoogleAuthProvider();
+
+const result=await signInWithPopup(auth,provider);
+
+await ensureUser(result.user);
+
+window.location="dashboard.html";
+
+}catch(e){
+
+alert("Google login failed");
+
+}
+
+};
+
+document.getElementById("forgotBtn").onclick=async()=>{
+
+const email=document.getElementById("email").value;
+
+if(!email){
+alert("Enter email first");
+return;
+}
+
+try{
+
+await sendPasswordResetEmail(auth,email);
+
+alert("Password reset email sent");
+
+}catch(e){
+
+alert(e.message);
+
+}
+
+};
+
+</script>
 
 </body>
 </html>
