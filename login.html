@@ -3,121 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login — Cyber Buddy Academy</title>
 
-<link rel="icon" href="https://raw.githubusercontent.com/Mubyyy404/Cyber-Buddy/main/mylogo.png">
+<title>CyberBuddy Login</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-:root{
---c:#06b6d4;
---c2:#0ea5e9;
---bg:#0b1220;
---bg2:#0d1829;
---bg3:#111f33;
---bdr:rgba(6,182,212,.12);
---tx:#e6f6f8;
---dim:#64748b;
-}
-
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:var(--bg);
-color:var(--tx);
+
+background:#071521;
+color:white;
 min-height:100vh;
 display:flex;
 flex-direction:column;
-}
-
-.page{
-flex:1;
-display:flex;
 align-items:center;
 justify-content:center;
-padding:28px 16px;
+
 }
 
-.glass-card{
-background:rgba(13,24,41,.88);
-border:1px solid rgba(255,255,255,.07);
-border-radius:14px;
-padding:28px;
+/* header */
+
+.header{
+
+position:absolute;
+top:20px;
+left:20px;
+font-size:22px;
+font-weight:700;
+
+}
+
+.header span:first-child{
+
+color:#00c7d9;
+
+}
+
+.header span:last-child{
+
+color:white;
+
+}
+
+/* container */
+
+.container{
+
+width:95%;
 max-width:420px;
-width:100%;
+
+background:#0e2234;
+
+border-radius:18px;
+
+padding:35px;
+
+box-shadow:0 0 25px rgba(0,0,0,.4);
+
 }
 
-.inp{
-width:100%;
-padding:10px 13px;
-background:rgba(255,255,255,.05);
-border:1.5px solid rgba(6,182,212,.18);
-border-radius:9px;
-color:var(--tx);
-font-family:'Poppins',sans-serif;
+/* title */
+
+.title{
+
+text-align:center;
+
+margin-bottom:20px;
+
 }
 
-.lbl{
-display:block;
-font-size:.67rem;
-font-weight:700;
-color:var(--c);
+.title h1{
+
+color:#00c7d9;
+
 margin-bottom:5px;
+
 }
 
-.btn-primary{
-width:100%;
-padding:11px;
-background:linear-gradient(135deg,#06b6d4,#0ea5e9);
-color:#042028;
-font-weight:700;
-border:none;
-border-radius:9px;
-cursor:pointer;
+.title p{
+
+color:#9ca3af;
+
+font-size:14px;
+
 }
 
-.btn-google{
-width:100%;
-padding:10px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:9px;
-color:#fff;
-cursor:pointer;
-margin-top:12px;
-}
+/* label */
 
-.alert-box{
-display:none;
-margin-bottom:14px;
-padding:10px;
-border-radius:8px;
-font-size:.8rem;
-}
+label{
 
-.alert-box.show{
 display:block;
+
+margin-top:15px;
+
+font-size:12px;
+
+letter-spacing:1px;
+
+color:#00c7d9;
+
 }
 
-.alert-box.error{
-background:#4c0519;
+/* input */
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-top:6px;
+
+border-radius:10px;
+
+border:1px solid #1e3a4f;
+
+background:#0c1a27;
+
+color:white;
+
+font-size:14px;
+
 }
 
-.alert-box.success{
-background:#064e3b;
+input::placeholder{
+
+color:#6b7280;
+
 }
 
-.alert-box.info{
-background:#083344;
+/* forgot */
+
+.forgot{
+
+text-align:right;
+
+margin-top:5px;
+
+font-size:12px;
+
+color:#00c7d9;
+
+cursor:pointer;
+
+}
+
+/* button */
+
+.login-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:13px;
+
+border:none;
+
+border-radius:10px;
+
+background:linear-gradient(90deg,#00c7d9,#1ba3d6);
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+/* divider */
+
+.divider{
+
+display:flex;
+
+align-items:center;
+
+margin:18px 0;
+
+color:#6b7280;
+
+font-size:13px;
+
+}
+
+.divider::before,
+.divider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:#1e3a4f;
+
+}
+
+.divider span{
+
+margin:0 10px;
+
+}
+
+/* google */
+
+.google-btn{
+
+width:100%;
+
+padding:12px;
+
+border-radius:10px;
+
+border:1px solid #1e3a4f;
+
+background:#0c1a27;
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+}
+
+/* register */
+
+.register{
+
+margin-top:15px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#9ca3af;
+
+}
+
+.register a{
+
+color:#00c7d9;
+
+font-weight:600;
+
+text-decoration:none;
+
 }
 
 </style>
@@ -125,183 +274,69 @@ background:#083344;
 
 <body>
 
-<div class="page">
+<div class="header">
 
-<div class="glass-card">
+<span>Cyber</span><span>Buddy</span> Academy
 
-<div id="alertBox" class="alert-box">
-<span id="alertTxt"></span>
 </div>
 
-<label class="lbl">Email Address</label>
+<div class="container">
 
-<input id="emailInp" class="inp" type="email">
+<div class="title">
 
-<label class="lbl" style="margin-top:14px;">Password</label>
+<h1>Welcome Back</h1>
 
-<input id="passInp" class="inp" type="password">
+<p>Sign in to your Cyber Buddy account</p>
 
-<button id="loginBtn" class="btn-primary" style="margin-top:18px;">
+</div>
+
+<label>Email Address</label>
+
+<input type="email" placeholder="you@email.com">
+
+<label>Password</label>
+
+<input type="password" placeholder="••••••••">
+
+<div class="forgot">
+
+Forgot password?
+
+</div>
+
+<button class="login-btn">
+
 Sign In
+
 </button>
 
-<button id="googleBtn" class="btn-google">
+<div class="divider">
+
+<span>OR</span>
+
+</div>
+
+<button class="google-btn">
+
 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18">
+
 Continue with Google
+
 </button>
 
+<div class="register">
+
+No account?
+
+<a href="register.html">
+
+Register free
+
+</a>
+
 </div>
+
 </div>
-
-<script type="module">
-
-import { auth, db } from "./js/firebase.js";
-
-import {
-signInWithEmailAndPassword,
-GoogleAuthProvider,
-signInWithPopup,
-sendPasswordResetEmail,
-sendEmailVerification,
-onAuthStateChanged,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-
-import {
-doc,
-getDoc,
-setDoc,
-serverTimestamp
-}
-from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-function showAlert(msg,type='error'){
-
-const box=document.getElementById('alertBox');
-const txt=document.getElementById('alertTxt');
-
-txt.textContent=msg;
-
-box.className=`alert-box show ${type}`;
-
-}
-
-async function ensureFirestoreUser(user,provider="email"){
-
-const ref=doc(db,'users',user.uid);
-
-const snap=await getDoc(ref);
-
-if(!snap.exists()){
-
-await setDoc(ref,{
-name:user.displayName || "Student",
-email:user.email,
-phone:"",
-role:"user",
-purchasedCourses:[],
-createdAt:serverTimestamp(),
-authProvider:provider
-});
-
-}
-
-}
-
-async function redirectByRole(user){
-
-await ensureFirestoreUser(user);
-
-const snap=await getDoc(doc(db,'users',user.uid));
-
-if(snap.exists() && snap.data().role==="admin"){
-
-window.location="admin.html";
-
-return;
-
-}
-
-window.location="dashboard.html";
-
-}
-
-onAuthStateChanged(auth, async user => {
-
-if(user){
-
-if(user.emailVerified){
-
-await redirectByRole(user);
-
-}else{
-
-await signOut(auth);
-
-}
-
-}
-
-});
-
-document.getElementById('loginBtn').onclick=async()=>{
-
-const email=document.getElementById('emailInp').value.trim();
-
-const pass=document.getElementById('passInp').value;
-
-if(!email || !pass){
-
-showAlert("Email and password required");
-
-return;
-
-}
-
-try{
-
-const res=await signInWithEmailAndPassword(auth,email,pass);
-
-if(!res.user.emailVerified){
-
-showAlert("Please verify your email first","info");
-
-return;
-
-}
-
-await redirectByRole(res.user);
-
-}catch(e){
-
-showAlert(e.message);
-
-}
-
-};
-
-document.getElementById('googleBtn').onclick=async()=>{
-
-try{
-
-const provider=new GoogleAuthProvider();
-
-const result=await signInWithPopup(auth,provider);
-
-await ensureFirestoreUser(result.user,"google");
-
-await redirectByRole(result.user);
-
-}catch(err){
-
-showAlert("Google sign-in failed");
-
-}
-
-};
-
-</script>
 
 </body>
 </html>
