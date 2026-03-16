@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Register — Cyber Buddy Academy</title>
+<link rel="icon" href="https://raw.githubusercontent.com/Mubyyy404/Cyber-Buddy/main/mylogo.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css">
+<style>:root{--c:#06b6d4;--c2:#0ea5e9;--bg:#0b1220;--bg2:#0d1829;--bg3:#111f33;--bdr:rgba(6,182,212,.12);--tx:#e6f6f8;--dim:#64748b}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column}#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}.top-nav{position:relative;z-index:10;height:54px;background:rgba(11,18,32,.95);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 24px;backdrop-filter:blur(12px)}.nav-logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.95rem;color:var(--c)}.nav-logo img{width:28px;height:28px;border-radius:7px}.page{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px 16px}.glass-card{background:rgba(13,24,41,.88);border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);border-radius:14px;padding:26px}.inp{width:100%;padding:10px 13px;background:rgba(255,255,255,.05);border:1.5px solid rgba(6,182,212,.18);border-radius:9px;color:var(--tx);font-family:'Poppins',sans-serif;font-size:.86rem;outline:none;transition:border-color .22s,box-shadow .22s}.inp:focus{border-color:var(--c);box-shadow:0 0 0 3px rgba(6,182,212,.09)}.inp::placeholder{color:rgba(230,246,248,.28)}.inp.err-field{border-color:#f43f5e!important;box-shadow:0 0 0 3px rgba(244,63,94,.07)!important}.lbl{display:block;font-size:.67rem;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:5px}.field-err{font-size:.7rem;color:#f87171;margin-top:4px;display:none}.field-err.show{display:block}.c2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:480px){.c2{grid-template-columns:1fr}}.btn-primary{width:100%;padding:11px;background:linear-gradient(135deg,#06b6d4,#0ea5e9);color:#042028;font-weight:700;font-size:.88rem;border:none;border-radius:9px;cursor:pointer;transition:transform .18s,box-shadow .18s;font-family:'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;gap:7px}.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 7px 20px rgba(6,182,212,.32)}.btn-primary:disabled{opacity:.6;cursor:not-allowed}.btn-google{width:100%;padding:10px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:9px;color:var(--tx);font-weight:600;font-size:.86rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Poppins',sans-serif}.btn-google:hover:not(:disabled){background:rgba(255,255,255,.09);border-color:rgba(6,182,212,.3)}.btn-google:disabled{opacity:.6;cursor:not-allowed}.divider{display:flex;align-items:center;gap:10px;color:rgba(230,246,248,.22);font-size:.75rem}.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}.alert-box{padding:10px 13px;border-radius:8px;font-size:.8rem;font-weight:600;display:none;align-items:center;gap:8px;line-height:1.4}.alert-box.show{display:flex}.alert-box.error{background:rgba(76,5,25,.75);border:1px solid rgba(244,63,94,.3);color:#fda4af}.alert-box.success{background:rgba(6,78,59,.75);border:1px solid rgba(16,185,129,.28);color:#6ee7b7}.str-bar{height:4px;border-radius:2px;transition:all .3s}.pw-wrap{position:relative}.pw-wrap .inp{padding-right:42px}.pw-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--dim);cursor:pointer;font-size:.86rem;padding:3px}.voverlay{position:fixed;inset:0;background:rgba(11,18,32,.95);backdrop-filter:blur(14px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}.voverlay.show{display:flex}.vcard{background:rgba(13,24,41,.98);border:1px solid rgba(6,182,212,.22);border-radius:16px;padding:32px;max-width:400px;width:100%;text-align:center}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}.pulse-icon{animation:pulse 2.2s ease-in-out infinite}.terms-row{display:flex;align-items:flex-start;gap:10px;padding:12px 0;cursor:pointer}.terms-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--c);margin-top:2px;flex-shrink:0;cursor:pointer}.terms-row span{font-size:.78rem;color:var(--dim);line-height:1.5}.terms-row a{color:var(--c);text-decoration:none}</style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas> <div id="vOverlay" class="voverlay"> <div class="vcard"> <div class="pulse-icon" style="width:66px;height:66px;border-radius:50%;background:rgba(6,182,212,.1);border:2px solid rgba(6,182,212,.28);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"> <i class="fas fa-envelope-open" style="color:var(--c);font-size:1.5rem;"></i> </div> <h2 style="font-size:1.2rem;font-weight:800;color:var(--c);margin-bottom:8px;">Verify Your Email</h2> <p style="color:var(--dim);font-size:.82rem;margin-bottom:6px;">We sent a verification link to:</p> <p id="vEmail" style="font-weight:700;font-size:.9rem;margin-bottom:14px;word-break:break-all;"></p> <p style="color:var(--dim);font-size:.76rem;margin-bottom:22px;line-height:1.6;">Click the link in your email to activate your account. Check your spam folder if you don't see it within a minute.</p> <a href="login.html" style="display:flex;align-items:center;justify-content:center;gap:7px;padding:11px;background:linear-gradient(135deg,#06b6d4,#0ea5e9);color:#042028;font-weight:700;font-size:.88rem;border-radius:9px;text-decoration:none;font-family:'Poppins',sans-serif;transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''"><i class="fas fa-sign-in-alt"></i>Go to Login</a> </div>
+</div> <div class="top-nav"> <div class="nav-logo"> <img src="https://raw.githubusercontent.com/Mubyyy404/Cyber-Buddy/refs/heads/main/mylogo.png" alt=""> <span>Cyber<span style="color:#fff;">Buddy</span> <span style="font-size:.65rem;font-weight:500;color:var(--dim);">Academy</span></span> </div>
+</div> <div class="page"> <div style="width:100%;max-width:460px;"> <div style="text-align:center;margin-bottom:20px;"> <div style="width:54px;height:54px;border-radius:13px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"> <i class="fas fa-user-plus" style="color:var(--c);font-size:1.15rem;"></i> </div> <h1 style="font-size:1.3rem;font-weight:800;color:var(--c);">Create Account</h1> <p style="font-size:.78rem;color:var(--dim);margin-top:4px;">Join Cyber Buddy Academy — it's free</p> </div> <div class="glass-card"> <div id="alertBox" class="alert-box" style="margin-bottom:14px;"><i id="alertIco" class="fas fa-exclamation-circle" style="flex-shrink:0;"></i><span id="alertTxt"></span></div> <div class="c2" style="margin-bottom:12px;"> <div> <label class="lbl">Full Name *</label> <input id="nameInp" type="text" class="inp" placeholder="Your full name" autocomplete="name"> <p class="field-err" id="nameErr"></p> </div> <div> <label class="lbl">Phone Number</label> <input id="phoneInp" type="tel" class="inp" placeholder="+91 98765 43210" autocomplete="tel"> </div> </div> <div style="margin-bottom:12px;"> <label class="lbl">Email Address *</label> <input id="emailInp" type="email" class="inp" placeholder="you@email.com" autocomplete="email"> <p class="field-err" id="emailErr"></p> </div> <div style="margin-bottom:12px;"> <label class="lbl">Password *</label> <div class="pw-wrap"> <input id="passInp" type="password" class="inp" placeholder="Min. 8 characters" oninput="checkStr()" autocomplete="new-password"> <button class="pw-toggle" id="togglePw" type="button"><i class="fas fa-eye" id="pwIco"></i></button> </div> <div style="display:flex;gap:3px;margin-top:6px;"> <div id="s1" class="str-bar flex-1" style="flex:1;background:#1e293b;"></div> <div id="s2" class="str-bar flex-1" style="flex:1;background:#1e293b;"></div> <div id="s3" class="str-bar flex-1" style="flex:1;background:#1e293b;"></div> <div id="s4" class="str-bar flex-1" style="flex:1;background:#1e293b;"></div> </div> <p id="strTxt" style="font-size:.7rem;margin-top:3px;color:var(--dim);height:16px;"></p> <p class="field-err" id="passErr"></p> </div> <div style="margin-bottom:14px;"> <label class="lbl">Confirm Password *</label> <input id="confirmInp" type="password" class="inp" placeholder="Re-enter password" autocomplete="new-password"> <p class="field-err" id="confirmErr"></p> </div> <div style="border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:4px 10px;margin-bottom:16px;background:rgba(255,255,255,.02);"> <label class="terms-row"> <input id="termsChk" type="checkbox"> <span>I agree to the <a href="#" onclick="return false;">Terms of Service</a> and <a href="#" onclick="return false;">Privacy Policy</a>. I understand my data will be stored securely.</span> </label> <p class="field-err" id="termsErr" style="padding-bottom:6px;"></p> </div> <button id="regBtn" class="btn-primary" style="margin-bottom:14px;"><i class="fas fa-user-plus"></i> Create Account</button> <div class="divider" style="margin-bottom:14px;">OR</div> <button id="googleBtn" class="btn-google" style="margin-bottom:16px;"> <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18" alt=""> Sign up with Google
+ </button> <p style="text-align:center;font-size:.8rem;color:var(--dim);">Already have an account? <a href="login.html" style="color:var(--c);font-weight:700;text-decoration:none;margin-left:3px;">Sign in</a></p> </div> </div>
+</div> <script>const cv=document.getElementById('bgCanvas'),cx=cv.getContext('2d');let dp=[];
+function rsz(){cv.width=window.innerWidth;cv.height=window.innerHeight;dp=Array.from({length:Math.floor(cv.width/16)},()=>Math.random()*40);}
+rsz();window.addEventListener('resize',rsz);
+setInterval(()=>{cx.fillStyle='rgba(11,18,32,.1)';cx.fillRect(0,0,cv.width,cv.height);cx.fillStyle='rgba(6,182,212,.5)';cx.font='12px monospace';dp.forEach((y,i)=>{cx.fillText(Math.random()>.5?'1':'0',i*16,y*16);if(y*16>cv.height&&Math.random()>.975)dp[i]=0;dp[i]+=.8;});},55);
+const pi=document.getElementById('passInp'),pico=document.getElementById('pwIco');
+document.getElementById('togglePw').onclick=()=>{const v=pi.type==='password';pi.type=v?'text':'password';pico.className=v?'fas fa-eye-slash':'fas fa-eye';};
+function checkStr(){
+const v=document.getElementById('passInp').value;
+const bars=['s1','s2','s3','s4'].map(id=>document.getElementById(id));
+let s=0;if(v.length>=8)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^a-zA-Z0-9]/.test(v))s++;
+const cols=['','#f43f5e','#fb923c','#facc15','#22c55e'],lbls=['','Weak','Fair','Good','Strong'];
+bars.forEach((b,i)=>{b.style.background=i<s?cols[s]:'#1e293b';});
+const t=document.getElementById('strTxt');t.textContent=v.length?lbls[s]:'';t.style.color=cols[s]||'';
+}</script> <script type="module">import { auth, db } from "./js/firebase.js";
+import { createUserWithEmailAndPassword, sendEmailVerification, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { doc, setDoc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+onAuthStateChanged(auth, user => { if(user && user.emailVerified) window.location='dashboard.html'; });
+function showAlert(msg,type='error'){
+const b=document.getElementById('alertBox'),t=document.getElementById('alertTxt'),ic=document.getElementById('alertIco');
+t.textContent=msg;b.className=`alert-box show ${type}`;
+ic.className=type==='success'?'fas fa-check-circle':'fas fa-exclamation-circle';ic.style.flexShrink='0';
+}
+function clearUI(){
+document.getElementById('alertBox').classList.remove('show');
+['nameInp','emailInp','passInp','confirmInp'].forEach(id=>document.getElementById(id).classList.remove('err-field'));
+['nameErr','emailErr','passErr','confirmErr','termsErr'].forEach(id=>{const e=document.getElementById(id);e.textContent='';e.classList.remove('show');});
+}
+function fldErr(fid,eid,msg){document.getElementById(fid).classList.add('err-field');const e=document.getElementById(eid);e.textContent=msg;e.classList.add('show');}
+function errMap(code){
+const m={'auth/email-already-in-use':'An account with this email already exists. Try signing in.','auth/invalid-email':'Please enter a valid email address.','auth/weak-password':'Password is too weak. Use at least 8 characters.','auth/operation-not-allowed':'Email registration is currently disabled.','auth/network-request-failed':'Network error. Check your connection.','auth/too-many-requests':'Too many attempts. Please wait a moment.'};
+return m[code]||null;
+}
+async function createFirestoreUser(uid, name, email, phone, provider='email'){
+await setDoc(doc(db,'users',uid),{
+name:name||'Student', email, phone:phone||'', role:'user',
+purchasedCourses:[], createdAt:serverTimestamp(), authProvider:provider
+});
+}
+document.getElementById('regBtn').onclick=async()=>{
+clearUI();
+const name=document.getElementById('nameInp').value.trim();
+const phone=document.getElementById('phoneInp').value.trim();
+const email=document.getElementById('emailInp').value.trim();
+const pass=document.getElementById('passInp').value;
+const confirm=document.getElementById('confirmInp').value;
+const terms=document.getElementById('termsChk').checked;
+let hasErr=false;
+if(!name){fldErr('nameInp','nameErr','Full name is required.');hasErr=true;}
+if(!email){fldErr('emailInp','emailErr','Email address is required.');hasErr=true;}
+else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){fldErr('emailInp','emailErr','Please enter a valid email address.');hasErr=true;}
+if(!pass){fldErr('passInp','passErr','Password is required.');hasErr=true;}
+else if(pass.length<8){fldErr('passInp','passErr','Password must be at least 8 characters.');hasErr=true;}
+if(pass&&confirm&&pass!==confirm){fldErr('confirmInp','confirmErr','Passwords do not match.');hasErr=true;}
+if(!terms){const e=document.getElementById('termsErr');e.textContent='You must accept the Terms of Service.';e.classList.add('show');hasErr=true;}
+if(hasErr)return;
+const btn=document.getElementById('regBtn');
+btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Creating account...';
+try{
+const res=await createUserWithEmailAndPassword(auth,email,pass);
+await createFirestoreUser(res.user.uid, name, email, phone, 'email');
+await sendEmailVerification(res.user);
+document.getElementById('vEmail').textContent=email;
+document.getElementById('vOverlay').classList.add('show');
+}catch(err){
+const msg=errMap(err.code);
+if(err.code==='auth/email-already-in-use') fldErr('emailInp','emailErr',msg);
+else if(err.code==='auth/invalid-email') fldErr('emailInp','emailErr',msg);
+else if(err.code==='auth/weak-password') fldErr('passInp','passErr',msg);
+else showAlert(msg||err.message.replace('Firebase: ','').replace(/\(auth.*\)/,''),'error');
+btn.disabled=false;btn.innerHTML='<i class="fas fa-user-plus"></i> Create Account';
+}
+};
+document.getElementById('googleBtn').onclick=async()=>{
+clearUI();
+const btn=document.getElementById('googleBtn');
+btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Connecting...';
+try{
+const provider=new GoogleAuthProvider();
+provider.addScope('profile');provider.addScope('email');
+const result=await signInWithPopup(auth,provider);
+const user=result.user;
+const ref=doc(db,'users',user.uid);
+const snap=await getDoc(ref);
+if(!snap.exists()){
+await createFirestoreUser(user.uid, user.displayName, user.email, '', 'google');
+}
+window.location='dashboard.html';
+}catch(err){
+if(err.code!=='auth/popup-closed-by-user'&&err.code!=='auth/cancelled-popup-request'){
+showAlert('Google sign-up failed. Please try again.','error');
+}
+btn.disabled=false;btn.innerHTML='<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18" alt=""> Sign up with Google';
+}
+};</script>
+</body>
+</html>
